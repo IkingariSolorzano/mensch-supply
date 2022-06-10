@@ -1,0 +1,22 @@
+
+(function(G,O,b,o,t){try{G=document.querySelector('form.product-form[action="/cart/add"]')
+if(!G){return}
+O=(window.location.search||'').split(/[?&]/)
+b=/^(attributes\[from-gobot:\d+\])=(-[\w\d-]+)$/
+for(var i=0;i<O.length;++i){if((o=b.exec(O[i]))&&(o.length===3)){
+t=document.createElement('INPUT')
+t.setAttribute('type','hidden')
+t.setAttribute('name',o[1])
+t.setAttribute('value',o[2])
+G.appendChild(t);
+}}}catch(e){console.error(e)}})();
+(function(G,O,b,o,t){
+G['gobot']=G['gobot']||function(){(G['gobot'].queue=G['gobot'].queue||[]).push(arguments)}
+b=O.createElement('script')
+b.async=1
+b.src='https://www.getgobot.com/app/v1/gobot-client.js?v=1.5.17'
+o=O.getElementsByTagName('script')[0]
+o.parentNode.insertBefore(b,o)
+})(window,document);
+gobot('create','-MicAUXrZyfpjf_NwHy6')
+gobot('pageview')
